@@ -56,81 +56,20 @@
         <h1 class="title" style="color: crimson;">Past Events</h1>
     </div>
 
-    <div class="d-flex justify-content-around align-items-center flex-wrap m-4">
-        <div class="form-check form-check-inline">
-            <input class="form-check-input border border-danger" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" style="color: crimson;" for="inlineCheckbox1">Category</label>
+    <div class="d-flex justify-content-around align-items-center flex-wrap">
+        <div id="categorias" class="d-flex justify-content-around align-items-center flex-wrap m-4">
         </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input border border-danger" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" style="color: crimson;" for="inlineCheckbox2">Category</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input border border-danger" type="checkbox" id="inlineCheckbox3" value="option3">
-            <label class="form-check-label" style="color: crimson;" for="inlineCheckbox1">Category</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input border border-danger" type="checkbox" id="inlineCheckbox4" value="option4">
-            <label class="form-check-label" style="color: crimson;" for="inlineCheckbox2">Category</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input border border-danger" type="checkbox" id="inlineCheckbox5" value="option5">
-            <label class="form-check-label" style="color: crimson;" for="inlineCheckbox1">Category</label>
-        </div>
-        <form class="d-flex align-items-center justify-content-aroun my-3" role="search">
-            <input class="form-control border border-danger flex-wrap" type="search" aria-label="Categories Search">
+        <div class="d-flex align-items-center justify-content-center my-3" role="search">
+            <input id="buscador" class="form-control border border-danger flex-wrap" type="search" aria-label="Categories Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-              class="bi bi-search text-danger ms-2" viewBox="0 0 16 16">
-              <path
-                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                class="bi bi-search text-danger ms-2" viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
             </svg>
-          </form>
+        </div>
     </div>
-    <div id="cards" class="cards d-flex justify-content-around m-5 flex-wrap gap-4" style="height: 100%;">
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/Marathon.jpg" class="card-img-top" style="height: 46%;" alt="Marathon">
-            <div class="card-body">
-                <h5 class="text-center">Marathon</h5>
-                <p class="card-text text-center">Texto descriptivo</p>
-                <div class="d-flex justify-content-between">
-                    <p>Price $0000</p>
-                    <a href="./details.html" class="btn btn-danger">See more</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/Cinema.jpg" class="card-img-top" style="height: 46%;" alt="Cinema">
-            <div class="card-body">
-                <h5 class="text-center">Cinema</h5>
-                <p class="card-text text-center">Texto descriptivo</p>
-                <div class="d-flex justify-content-between mt-auto">
-                    <p>Price $0000</p>
-                    <a href="./details.html" class="btn btn-danger">See more</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/Food_Fair.jpg" class="card-img-top" style="height: 46%;" alt="Food Fair">
-            <div class="card-body">
-                <h5 class="text-center">Food Fair</h5>
-                <p class="card-text text-center">Texto descriptivo</p>
-                <div class="d-flex justify-content-between mt-auto">
-                    <p>Price $0000</p>
-                    <a href="./details.html" class="btn btn-danger">See more</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/Costume_Party.jpg" class="card-img-top" style="height: 46%;" alt="Costume Party">
-            <div class="card-body">
-                <h5 class="text-center">Costume Party</h5>
-                <p class="card-text text-center">Texto descriptivo</p>
-                <div class="d-flex justify-content-between mt-auto">
-                    <p>Price $0000</p>
-                    <a href="./details.html" class="btn btn-danger">See more</a>
-                </div>
-            </div>
-        </div>
+
+    <div id="cards" class="cards d-flex justify-content-around m-5 flex-wrap gap-4" style="height: 100%;">   
     </div>
     <footer>
         <nav class="navbar bg-dark d-flex justify-content-between text-center p-3 mb-0">
