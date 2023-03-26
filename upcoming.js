@@ -1,10 +1,25 @@
-let events = []
-for (let i = 0; i < data.events.length; i++) {
-  events.push(data.events[i])
+let newEvents = []
+let upcomingEvents = []
+const obtenerEventos = async () => {
+  try {
+    const respuesta = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
+    let apiObjetos = await respuesta.json()
+    newEvents = apiObjetos.events
+    upcomingEvents = newEvents.filter(event => (event.date > apiObjetos.currentDate))
+    painCards(upcomingEvents)
+    painChecksbox(upcomingEvents)
+    input.addEventListener('input', ()=>painCards(filtrarPorCategoria(filtarTextoIngresado(upcomingEvents, input.value))))
+    checks.addEventListener('change', ()=> painCards(filtrarPorCategoria(filtarTextoIngresado(upcomingEvents, input.value))))
+    console.log(upcomingEvents);
+  }
+  catch (error) {
+    console.log(error);
+    alert('Error')
+  }
 }
 
-let upcomingEvents = events.filter(event => (event.date > data.currentDate))
-console.log(upcomingEvents);
+obtenerEventos()
+
 
 const checks = document.getElementById("categorias");
 const upcomingCards = document.getElementById("cards");
@@ -47,7 +62,6 @@ function painChecksbox(events) {
   checks.innerHTML = checkbox;
 }
 
-
 function painCards(upcomingEvents) {
   if (upcomingEvents.length == 0) {
     upcomingCards.innerHTML = "<h5 class='text-danger'>No result for your search!</h5>"
@@ -62,8 +76,8 @@ function painCards(upcomingEvents) {
          <h5 class="text-center">${event.name}</h5>
          <p class="card-text text-center">${event.description}</p>
          <div class="d-flex justify-content-between">
-          <p>price: $${event.price}</p>
-           <a href="./details.html" class="btn btn-danger">See more</a>
+          <p>Price: $${event.price}</p>
+           <a href="./details.html?_id=${event._id}" class="btn btn-danger">See more</a>
          </div>
        </div>
      </div>
@@ -77,6 +91,7 @@ function filtarTextoIngresado(upcomingEvents, texto) {
   return dataFilter
 }
 
+
 function filtrarPorCategoria(upcomingEvents) {
   let checkboxes = document.querySelectorAll("input[type='checkbox']")
   let arrayChecks = Array.from(checkboxes)
@@ -88,7 +103,3 @@ function filtrarPorCategoria(upcomingEvents) {
   let eventsFilter = upcomingEvents.filter(event => checkValues.includes(event.category))
   return eventsFilter
 }
-
-
-painCards(upcomingEvents);
-painChecksbox(events);
